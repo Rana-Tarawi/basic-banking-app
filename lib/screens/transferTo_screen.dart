@@ -21,13 +21,14 @@ class transferToScreen extends StatefulWidget {
 }
 
 class _transferToScreenState extends State<transferToScreen> {
+  int recieverID = -1;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     sqlDb database = sqlDb();
     int senderID = widget.dta['id'];
-    int recieverID = -1;
+
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -97,20 +98,20 @@ class _transferToScreenState extends State<transferToScreen> {
                               if ((response1 != 0) &
                                   (response2 != 0) &
                                   (response3 != 0)) {
-                                Navigator.of(context).pushAndRemoveUntil(
+                                Navigator.of(context).push(
                                     MaterialPageRoute(
                                         fullscreenDialog: true,
                                         builder: (context) =>
                                             const homeScreen()),
-                                    (route) => false);
-
+                                    );
                                 ScaffoldMessenger.of(context)
                                     .showSnackBar(SnackBar(
                                   behavior: SnackBarBehavior.floating,
                                   backgroundColor: Colors.transparent,
                                   elevation: 0,
                                   content: Row(
-                                      mainAxisAlignment:MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         const CircleAvatar(
                                             radius: 20,

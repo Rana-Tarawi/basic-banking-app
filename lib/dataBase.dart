@@ -66,7 +66,6 @@ class sqlDb {
   ) async {
     Database? database = await dataBase;
     int response = await database!.update(table, values, where: where);
-    print('updated');
     return response;
   }
 

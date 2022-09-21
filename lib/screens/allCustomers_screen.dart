@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:basic_banking_app/dataBase.dart';
 import 'package:basic_banking_app/screens/customer_screen.dart';
 import 'package:basic_banking_app/screens/home_screen.dart';
@@ -38,7 +40,7 @@ class _allCustomersState extends State<allCustomers> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: appbar(context, "All Customers",homeScreen()),
+      appBar: appbar(context, "All Customers",const homeScreen()),
       body: Stack(
         children: [
           const backgroundimage(imageurl: "images/otherPages.jpg"),
